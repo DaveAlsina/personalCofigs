@@ -110,6 +110,18 @@ rm ./appimagelauncher*.AppImage
 
 
 #############################
+# instala todoist
+##############################
+
+cd ~/Downloads 
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+sudo apt install -y ./google-chrome-stable*.deb
+rm  ./google-chrome-stable*.deb
+cd
+
+
+#############################
 # instala vainas academicas 
 #############################
 
