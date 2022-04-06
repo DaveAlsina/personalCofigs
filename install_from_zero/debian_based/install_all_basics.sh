@@ -24,6 +24,14 @@ sudo apt install -y  git
 sudo apt install -y zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+cd ~/.oh-my-zsh
+cd plugins
+git clone https://github.com/zsh-users/zsh-autosuggestions.git
+cd 
+
+
+
+
 ###########################
 #  instala utilities 
 ###########################

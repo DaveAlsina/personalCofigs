@@ -66,6 +66,7 @@ bash ./Anaconda*.sh
 
 conda activate base
 conda install jupyter matplotlib numba scipy tensorflow 
+rm ./Anaconda*.sh
 
 #############################
 # instala  zoom
@@ -75,6 +76,8 @@ conda install jupyter matplotlib numba scipy tensorflow
 cd ~/Downloads
 wget https://zoom.us/client/latest/zoom_amd64.deb
 sudo apt install -y ./zoom*.deb
+
+rm ./zoom*.deb
 
 #############################
 # instala write 
@@ -102,7 +105,20 @@ wget https://todoist.com/linux_app/appimage
 mv appimage ./todoist
 mv ./todoist ~/Applications
 
+rm ./appimagelauncher*.AppImage
 
+
+
+#############################
+# instala todoist
+##############################
+
+cd ~/Downloads 
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+sudo apt install -y ./google-chrome-stable*.deb
+rm  ./google-chrome-stable*.deb
+cd
 
 
 #############################
