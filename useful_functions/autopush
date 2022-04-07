@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 
-log=/home/dave/log_file.txt
+mkdir /home/dave/Logs
+log=/home/dave/Logs/autopush_5tosemestre.txt
 
 #crea o sobreescribe el archivo ya existente
 printf "Log File - " > $log
