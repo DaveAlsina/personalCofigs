@@ -1,10 +1,32 @@
 #!/usr/bin/bash
 
+log=/home/dave/log_file.txt
+
+#crea o sobreescribe el archivo ya existente
+printf "Log File - " > $log
+
 current_time=$(date)
 current_usr=$(hostname)
-cd ~/Documents/univ/5toSemestre/
-git pull
-git add * 
-git commit -m "commited from *$current_usr* machine **$current_time**"
-git push
+echo "$current_usr, $current_time" >> $log
+echo "-------------------------------------------------" >> $log
+
+echo "entering /home/dave/Documents/univ/5toSemestre" >> $log
+cd /home/dave/Documents/univ/5toSemestre 
+echo "-------------------------------------------------" >> $log
+
+echo "Pulling changes ..." >> $log
+git pull &>> $log
+echo "-------------------------------------------------" >> $log
+
+echo "Adding everything ..." >> $log
+git add * &>> $log
+echo "-------------------------------------------------" >> $log
+
+echo "Commiting ..." >> $log
+git commit -m "commited from *$current_usr* machine **$current_time**"  &>> $log
+echo "-------------------------------------------------" >> $log
+
+echo "Pushing ..." >> $log
+git push &>> $log
+echo "-------------------------------------------------" >> $log
 
