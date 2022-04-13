@@ -19,6 +19,16 @@ echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=
 
 sudo apt install -y brave-browser
 
+##########################
+# instala chrome 
+##########################
+
+cd ~/Downloads
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install -y ./google-chrome*.deb
+rm ./google-chrome*.deb
+cd
+
 
 ##########################
 # instala arduino  
@@ -42,7 +52,6 @@ cd ~/Downloads
 wget -O discord.deb https://discord.com/api/download?platform=linux&format=deb
 sudo apt install ./discord.deb
 rm ./discord.deb
-
 
 
 
@@ -120,6 +129,14 @@ sudo apt install -y ./google-chrome-stable*.deb
 rm  ./google-chrome-stable*.deb
 cd
 
+#############################
+# instala Notion 
+##############################
+
+cd ~/Downloads 
+wget https://github.com/notion-enhancer/notion-repackaged/releases/download/v2.0.18-1/Notion-2.0.18-1.AppImage
+mv Notion*.AppImage ~/Applications
+cd 
 
 #############################
 # instala vainas academicas 
