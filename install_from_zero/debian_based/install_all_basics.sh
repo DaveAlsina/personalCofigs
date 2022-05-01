@@ -60,13 +60,34 @@ sudo apt install -y terminator
 
 
 ###########################
-#  instala terminator 
+#  instala lsd
 ###########################
 
 cd ~/Downloads
 wget https://github.com/Peltoche/lsd/releases/download/0.21.0/lsd-musl_0.21.0_amd64.deb
 sudo apt install -y ./lsd*.deb
+rm ./lsd*.deb
 cd
+
+
+###########################
+#  instala lsd
+###########################
+
+cd ~/Downloads
+wget https://github.com/sharkdp/bat/releases/download/v0.20.0/bat-musl_0.20.0_amd64.deb
+sudo apt install -y ./bat*.deb
+rm ./bat*.deb
+cd
+
+
+
+###########################
+#  instala unos fonts 
+###########################
+cd ~
+mkdir -p .fonts
+
 
 
 
