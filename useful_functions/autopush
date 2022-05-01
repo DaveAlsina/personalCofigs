@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-mkdir /home/dave/Logs
+mkdir -p /home/dave/Logs
 log=/home/dave/Logs/autopush_5tosemestre.txt
 
 #crea o sobreescribe el archivo ya existente
