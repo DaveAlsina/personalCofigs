@@ -58,3 +58,15 @@ sudo apt install gh
 
 sudo apt install -y terminator
 
+
+###########################
+#  instala terminator 
+###########################
+
+cd ~/Downloads
+wget https://github.com/Peltoche/lsd/releases/download/0.21.0/lsd-musl_0.21.0_amd64.deb
+sudo apt install -y ./lsd*.deb
+cd
+
+
+
