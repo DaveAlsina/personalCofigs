@@ -30,8 +30,6 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git
 cd 
 
 
-
-
 ###########################
 #  instala utilities 
 ###########################
@@ -54,4 +52,9 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githu
 sudo apt update
 sudo apt install gh
 
+###########################
+#  instala terminator 
+###########################
+
+sudo apt install -y terminator
 
