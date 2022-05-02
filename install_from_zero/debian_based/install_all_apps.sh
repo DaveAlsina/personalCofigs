@@ -138,6 +138,18 @@ wget https://github.com/notion-enhancer/notion-repackaged/releases/download/v2.0
 mv Notion*.AppImage ~/Applications
 cd 
 
+
+#############################
+# instala Obsidian -> por si acaso 
+##############################
+
+cd ~/Downloads 
+wget https://github.com/obsidianmd/obsidian-releases/releases/download/v0.14.6/obsidian_0.14.6_amd64.deb
+sudo apt install -y ./obsidian*.deb
+rm obsidian*.deb
+cd 
+
+
 #############################
 # instala vainas academicas 
 #############################
