@@ -165,7 +165,14 @@ rm ./rstudio-2022.02.0-443-amd64.deb
 sudo apt install -y wireshark
 
 
+#############################
+# instala kicad para diseñar circuitos 
+#############################
 
+
+sudo add-apt-repository --yes ppa:kicad/kicad-6.0-releases
+sudo apt update
+sudo apt install --install-recommends -y kicad
 
 
 
