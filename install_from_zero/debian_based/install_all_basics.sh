@@ -1,14 +1,34 @@
 ###########################
 #  instala update
 ###########################
-
 sudo apt-get update
 
 ###########################
 #  instala vim
 ###########################
-
 sudo apt install -y vim 
+
+###########################
+#  instala neo vim
+###########################
+cd ~/Downloads
+wget https://github.com/neovim/neovim/releases/download/v0.7.0/nvim-linux64.deb
+sudo apt install -y ./nvim-linux*.deb
+cd
+
+
+###########################
+#  instala una nerdfont
+###########################
+mkdir 	~/.fonts
+cd 	~/.fonts
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/AnonymousPro.zip
+unzip ./AnonymousPro.zip
+rm ./AnonymousPro.zip
+fc-cache -fv
+
+cd
+
 
 
 ###########################
@@ -16,6 +36,7 @@ sudo apt install -y vim
 ###########################
 
 sudo apt install -y  git
+
 
 ###################################
 #  instala zsh junto con ohmyzsh
@@ -71,7 +92,7 @@ cd
 
 
 ###########################
-#  instala lsd
+#  instala bat
 ###########################
 
 cd ~/Downloads
@@ -79,6 +100,8 @@ wget https://github.com/sharkdp/bat/releases/download/v0.20.0/bat-musl_0.20.0_am
 sudo apt install -y ./bat*.deb
 rm ./bat*.deb
 cd
+
+
 
 
 
