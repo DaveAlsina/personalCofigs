@@ -23,8 +23,11 @@ cd
 mkdir 	~/.fonts
 cd 	~/.fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/AnonymousPro.zip
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/DejaVuSansMono.zip
+unzio ./DejaVu*.zip
 unzip ./AnonymousPro.zip
 rm ./AnonymousPro.zip
+rm ./DejaVu*.zip
 fc-cache -fv
 
 cd

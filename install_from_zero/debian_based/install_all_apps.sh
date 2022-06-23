@@ -155,6 +155,7 @@ cd
 #############################
 
 # rstudio
+sudo apt install r-base
 cd ~/Downloads
 wget https://download1.rstudio.org/desktop/bionic/amd64/rstudio-2022.02.0-443-amd64.deb
 sudo apt install -y ./rstudio-2022.02.0-443-amd64.deb
