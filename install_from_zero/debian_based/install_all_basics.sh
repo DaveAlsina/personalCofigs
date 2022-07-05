@@ -1,20 +1,41 @@
 ###########################
 #  instala update
 ###########################
-sudo apt-get update
+sudo apt-get update -y 
+sudo apt-get upgrade -y 
 
 ###########################
-#  instala vim
+#  instala git
 ###########################
-sudo apt install -y vim 
+sudo apt install -y  git
+
+
+
+###########################
+#  instala kitty
+###########################
+sudo apt install -y kitty
+cd ~
+rm -rf ~/.config/kitty
+
+git clone https://github.com/dleyvacastro/dotfiles.git
+cp -rf ~/dotfiles/.config/kitty ~/.config/
+rm -rf ~/dotfiles
+
 
 ###########################
 #  instala neo vim
 ###########################
+sudo apt install -y nodejs
+sudo pip3 install neovim
+
 cd ~/Downloads
 wget https://github.com/neovim/neovim/releases/download/v0.7.0/nvim-linux64.deb
 sudo apt install -y ./nvim-linux*.deb
-cd
+
+cd ~/.config
+rm -rf nvim 
+git clone https://github.com/dleyvacastro/nvim.git
 
 
 ###########################
@@ -24,35 +45,16 @@ mkdir 	~/.fonts
 cd 	~/.fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/AnonymousPro.zip
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/DejaVuSansMono.zip
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/VictorMono.zip
 unzio ./DejaVu*.zip
 unzip ./AnonymousPro.zip
+unzip ./Victor*.zip
 rm ./AnonymousPro.zip
 rm ./DejaVu*.zip
+rm ./Victor*.zip
 fc-cache -fv
 
 cd
-
-
-
-###########################
-#  instala git
-###########################
-
-sudo apt install -y  git
-
-
-###################################
-#  instala zsh junto con ohmyzsh
-###################################
-
-sudo apt install -y zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-cd ~/.oh-my-zsh
-cd plugins
-git clone https://github.com/zsh-users/zsh-autosuggestions.git
-cd 
-
 
 ###########################
 #  instala utilities 
@@ -64,7 +66,7 @@ sudo apt install -y htop
 # instala latex completico
 ###########################
 
-sudo apt install -y texlive-full
+#sudo apt install -y texlive-full
 
 
 ###########################
@@ -75,12 +77,6 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
 sudo apt update
 sudo apt install gh
-
-###########################
-#  instala terminator 
-###########################
-
-sudo apt install -y terminator
 
 
 ###########################
@@ -105,19 +101,15 @@ rm ./bat*.deb
 cd
 
 
+###################################
+#  instala zsh junto con ohmyzsh
+###################################
 
+sudo apt install -y zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-
-###########################
-#  instala unos fonts 
-###########################
-cd ~/Downloads
-
-git clone https://github.com/powerline/fonts.git --depth=1
-cd fonts
-./install.sh
-cd ..
-rm -rf fonts
-
-
+cd ~/.oh-my-zsh
+cd plugins
+git clone https://github.com/zsh-users/zsh-autosuggestions.git
+cd 
 
