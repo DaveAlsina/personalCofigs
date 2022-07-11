@@ -1,38 +1,15 @@
-##########################
-# instala telegram
-##########################
+#!/bin/bash
 
-cd ~/Downloads
-wget https://telegram.org/dl/desktop/linux
-tar -xf linux 
-rm linux
-
-##########################
-# instala brave
-##########################
-
-sudo apt install -y apt-transport-https curl
-
-sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-
-echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-
-sudo apt install -y brave-browser
-
-##########################
-# instala chrome 
-##########################
-
-cd ~/Downloads
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo apt install -y ./google-chrome*.deb
-rm ./google-chrome*.deb
-cd
-
+print_downloading_message() {
+  echo "#########################"  
+  echo "Downloading $1 ..."
+  echo "#########################"  
+}
 
 ##########################
 # instala arduino  
 ##########################
+print_downloading_message "arduino"
 
 cd ~/Downloads
 wget https://downloads.arduino.cc/arduino-1.8.19-linux64.tar.xz
@@ -44,24 +21,82 @@ cd ./arduino*
 ./arduino-linux-set-up.sh
 sudo ./install.sh
 
+
+##########################
+# instala thonny micropython IDE
+##########################
+
+sudo apt install -y thonny
+
+
+
+##########################
+# instala chrome 
+##########################
+print_downloading_message "chrome"
+
+cd ~/Downloads
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install -y ./google-chrome*.deb
+rm ./google-chrome*.deb
+cd
+
+##########################
+# instala brave
+##########################
+print_downloading_message "brave"
+
+sudo apt install -y apt-transport-https curl
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+
+sudo apt install -y brave-browser
+
+
+#############################
+# instala  zoom
+#############################
+print_downloading_message "zoom"
+
+cd ~/Downloads
+wget https://zoom.us/client/latest/zoom_amd64.deb
+sudo apt install -y ./zoom*.deb
+
+rm ./zoom*.deb
+
+
+
 ##########################
 # instala discord
 ##########################
+print_downloading_message "discord"
 
 cd ~/Downloads
-wget -O discord.deb https://discord.com/api/download?platform=linux&format=deb
-sudo apt install ./discord.deb
+wget -O discord.deb https://discord.com/api/download\?platform=linux\&format=deb
+sudo apt install -y ./discord.deb
 rm ./discord.deb
+
+
+##########################
+# instala telegram
+##########################
+print_downloading_message "telegram"
+
+cd ~/Downloads
+wget https://telegram.org/dl/desktop/linux
+mv linux telegram.tar.xz
+tar -xf telegram.tar.xz 
+rm telegram.tar.xz
 
 
 
 ##########################
 # instala spotify
 ##########################
+print_downloading_message  "spotify"
 
 curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | sudo apt-key add - 
-echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sou
-
+echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 sudo apt-get update && sudo apt-get install -y spotify-client
 
 
@@ -77,16 +112,6 @@ conda activate base
 conda install jupyter matplotlib numba scipy tensorflow 
 rm ./Anaconda*.sh
 
-#############################
-# instala  zoom
-#############################
-
-
-cd ~/Downloads
-wget https://zoom.us/client/latest/zoom_amd64.deb
-sudo apt install -y ./zoom*.deb
-
-rm ./zoom*.deb
 
 #############################
 # instala write 
@@ -151,26 +176,6 @@ cd
 
 
 #############################
-# instala vainas academicas 
-#############################
-
-# rstudio
-sudo apt install dirmngr gnupg apt-transport-https ca-certificates software-properties-common
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
-sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/'
-
-sudo apt install r-base
-cd ~/Downloads
-wget https://download1.rstudio.org/desktop/bionic/amd64/rstudio-2022.02.0-443-amd64.deb
-sudo apt install -y ./rstudio-2022.02.0-443-amd64.deb
-rm ./rstudio-2022.02.0-443-amd64.deb
-
-
-# wireshark
-sudo apt install -y wireshark
-
-
-#############################
 # instala kicad para diseñar circuitos 
 #############################
 
@@ -178,6 +183,34 @@ sudo apt install -y wireshark
 sudo add-apt-repository --yes ppa:kicad/kicad-6.0-releases
 sudo apt update
 sudo apt install --install-recommends -y kicad
+
+
+
+
+#############################
+# instala vainas academicas 
+#############################
+
+# rstudio
+#sudo apt install dirmngr gnupg apt-transport-https ca-certificates software-properties-common
+#sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+#sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/'
+
+#sudo apt install r-base
+#cd ~/Downloads
+#wget https://download1.rstudio.org/desktop/bionic/amd64/rstudio-2022.02.0-443-amd64.deb
+#sudo apt install -y ./rstudio-2022.02.0-443-amd64.deb
+#rm ./rstudio-2022.02.0-443-amd64.deb
+
+# wireshark
+#sudo apt install -y wireshark
+
+#################################
+# ejecuta algunas cosas al final
+#################################
+
+. ~/Downloads/Telegram/Telegram
+
 
 
 
