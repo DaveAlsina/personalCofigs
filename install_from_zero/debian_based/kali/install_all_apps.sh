@@ -42,6 +42,16 @@ rm ./google-chrome*.deb
 cd
 
 ##########################
+# instala vivaldi
+##########################
+
+cd ~/Downloads
+wget https://downloads.vivaldi.com/stable/vivaldi-stable_5.3.2679.68-1_amd64.deb
+sudo apt install -y ./vivaldi*.deb
+rm ./vivaldi*.deb
+cd
+
+##########################
 # instala brave
 ##########################
 print_downloading_message "brave"
