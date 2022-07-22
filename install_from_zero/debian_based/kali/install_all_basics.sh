@@ -124,3 +124,11 @@ cd plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions.git
 cd 
 
+
+############################
+# Docker
+############################
+
+
+#https://computingforgeeks.com/install-docker-and-docker-compose-on-kali-linux/
+
