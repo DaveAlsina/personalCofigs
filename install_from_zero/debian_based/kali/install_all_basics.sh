@@ -1,8 +1,7 @@
 ###########################
 #  instala update
 ###########################
-sudo apt-get update -y 
-sudo apt-get upgrade -y 
+sudo apt update && sudo apt -y full-upgrade
 
 ###########################
 #  instala git
@@ -112,23 +111,76 @@ cd
 sudo apt install -y rofi
 
 
-###################################
-#  instala zsh junto con ohmyzsh
-###################################
+###########################
+#  Instala starship
+###########################
+curl -sS https://starship.rs/install.sh | sh
 
-sudo apt install -y zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-cd ~/.oh-my-zsh
-cd plugins
-git clone https://github.com/zsh-users/zsh-autosuggestions.git
-cd 
+echo 'eval "$(starship init zsh)"' >> ~/.zshrc
 
 
 ############################
 # Docker
 ############################
+# https://computingforgeeks.com/install-docker-and-docker-compose-on-kali-linux/
+
+sudo apt install curl gnupg2 apt-transport-https software-properties-common ca-certificates
+[ -f /var/run/reboot-required ] && sudo reboot -f
+
+# Import Docker GPG key used for signing Docker packages:
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/docker-archive-keyring.gpg
+
+# Add Docker repository which contain the latest stable releases of Docker CE.
+echo "deb [arch=amd64] https://download.docker.com/linux/debian bullseye stable" | sudo tee  /etc/apt/sources.list.d/docker.list
+sudo apt update
+
+sudo apt install -y docker-ce docker-ce-cli containerd.io 
+
+# This installation will add docker group to the system without any users.
+# Add your user account to the group to run docker commands as non-privileged user.
+
+sudo usermod -aG docker $USER
+newgrp docker
 
 
-#https://computingforgeeks.com/install-docker-and-docker-compose-on-kali-linux/
+
+
+###########################
+# install venv 
+###########################
+pip install virtualenv
+
+
+###########################
+# autoswitch between virtualenvs
+###########################
+#https://github.com/MichaelAquilina/zsh-autoswitch-virtualenv#how-it-works 
+
+mkdir -p ~/.config/zsh/plugins/
+cd ~/.config/zsh/plugins/
+
+git clone https://github.com/MichaelAquilina/zsh-autoswitch-virtualenv
+echo 'source $HOME/zsh-plugins/zsh-autoswitch-virtualenv/autoswitch_virtualenv.plugin.zsh' >> ~/.zshrc
+
+
+
+
+
+
+
+
+
+
+###################################
+#  instala zsh junto con ohmyzsh
+###################################
+
+#sudo apt install -y zsh
+#sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+#cd ~/.oh-my-zsh
+#cd plugins
+#git clone https://github.com/zsh-users/zsh-autosuggestions.git
+#cd 
+
 
