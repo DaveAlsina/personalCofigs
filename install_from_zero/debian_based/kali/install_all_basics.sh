@@ -94,6 +94,7 @@ sudo apt install -y ./lsd*.deb
 rm ./lsd*.deb
 cd
 
+echo 'alias ls="lsd --color=auto"' >> ~/.zshrc
 
 ###########################
 #  instala bat
@@ -103,6 +104,9 @@ cd ~/Downloads
 wget https://github.com/sharkdp/bat/releases/download/v0.20.0/bat-musl_0.20.0_amd64.deb
 sudo apt install -y ./bat*.deb
 rm ./bat*.deb
+
+echo 'alias cat="bat --color-scheme dark"' >> ~/.zshrc
+
 cd
 
 #############################################
@@ -124,7 +128,7 @@ echo 'eval "$(starship init zsh)"' >> ~/.zshrc
 ############################
 # https://computingforgeeks.com/install-docker-and-docker-compose-on-kali-linux/
 
-sudo apt install curl gnupg2 apt-transport-https software-properties-common ca-certificates
+sudo apt install -y curl gnupg2 apt-transport-https software-properties-common ca-certificates
 [ -f /var/run/reboot-required ] && sudo reboot -f
 
 # Import Docker GPG key used for signing Docker packages:
