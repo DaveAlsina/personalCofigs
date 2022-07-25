@@ -105,7 +105,7 @@ wget https://github.com/sharkdp/bat/releases/download/v0.20.0/bat-musl_0.20.0_am
 sudo apt install -y ./bat*.deb
 rm ./bat*.deb
 
-echo 'alias cat="bat --color-scheme dark"' >> ~/.zshrc
+echo 'alias cat="bat --color auto"' >> ~/.zshrc
 
 cd
 
@@ -164,7 +164,7 @@ mkdir -p ~/.config/zsh/plugins/
 cd ~/.config/zsh/plugins/
 
 git clone https://github.com/MichaelAquilina/zsh-autoswitch-virtualenv
-echo 'source $HOME/zsh-plugins/zsh-autoswitch-virtualenv/autoswitch_virtualenv.plugin.zsh' >> ~/.zshrc
+echo 'source $HOME/.config/zsh/plugins/zsh-plugins/zsh-autoswitch-virtualenv/autoswitch_virtualenv.plugin.zsh' >> ~/.zshrc
 
 
 
