@@ -38,9 +38,12 @@ cd ~/Downloads
 wget https://github.com/neovim/neovim/releases/download/v0.7.0/nvim-linux64.deb
 sudo apt install -y ./nvim-linux*.deb
 
+echo 'alias vim="nvim"' >> ~/.zshrc
+
 cd ~/.config
 rm -rf nvim 
 git clone https://github.com/dleyvacastro/nvim.git
+
 
 
 ###########################
@@ -67,11 +70,6 @@ cd
 
 sudo apt install -y htop
 
-###########################
-# instala latex completico
-###########################
-
-#sudo apt install -y texlive-full
 
 
 ###########################
@@ -119,8 +117,25 @@ sudo apt install -y rofi
 #  Instala starship
 ###########################
 curl -sS https://starship.rs/install.sh | sh
-
 echo 'eval "$(starship init zsh)"' >> ~/.zshrc
+
+
+###########################
+# install venv 
+###########################
+pip install virtualenv
+
+
+###########################
+# autoswitch between virtualenvs
+###########################
+#https://github.com/MichaelAquilina/zsh-autoswitch-virtualenv#how-it-works 
+
+mkdir -p ~/.config/zsh/plugins/
+cd ~/.config/zsh/plugins/
+
+git clone https://github.com/MichaelAquilina/zsh-autoswitch-virtualenv
+echo 'source $HOME/.config/zsh/plugins/zsh-plugins/zsh-autoswitch-virtualenv/autoswitch_virtualenv.plugin.zsh' >> ~/.zshrc
 
 
 ############################
@@ -147,32 +162,22 @@ sudo usermod -aG docker $USER
 newgrp docker
 
 
+############################
+# linodes script 
+############################
+
+cd 
+git clone https://github.com/dleyvacastro/dotfiles.git
+sudo cp ~/dotfiles/linodes /usr/local/bin 
+sudo ln -s /usr/local/bin/linodes linodes
+
 
 
 ###########################
-# install venv 
+# instala latex completico
 ###########################
-pip install virtualenv
 
-
-###########################
-# autoswitch between virtualenvs
-###########################
-#https://github.com/MichaelAquilina/zsh-autoswitch-virtualenv#how-it-works 
-
-mkdir -p ~/.config/zsh/plugins/
-cd ~/.config/zsh/plugins/
-
-git clone https://github.com/MichaelAquilina/zsh-autoswitch-virtualenv
-echo 'source $HOME/.config/zsh/plugins/zsh-plugins/zsh-autoswitch-virtualenv/autoswitch_virtualenv.plugin.zsh' >> ~/.zshrc
-
-
-
-
-
-
-
-
+#sudo apt install -y texlive-full
 
 
 ###################################
