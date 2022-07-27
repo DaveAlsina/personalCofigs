@@ -177,7 +177,8 @@ sudo ln -s /usr/local/bin/linodes linodes
 # instala latex completico
 ###########################
 
-#sudo apt install -y texlive-full
+#sudo apt install -y texlive-latex-extra
+#sudo apt-get install texlive-lang-spanish 
 
 
 ###################################
