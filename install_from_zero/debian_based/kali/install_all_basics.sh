@@ -1,3 +1,5 @@
+DOWNLOADS_FOLDER='/home/dave/Downloads'
+
 ###########################
 #  instala update
 ###########################
@@ -12,15 +14,15 @@ sudo apt install -y  git
 # instala ngrok
 ##########################
 
-cd ~/Downloads
+cd $DOWNLOADS_FOLDER
 wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
-sudo tar xvzf ~/Downloads/ngrok-v3-stable-linux-amd64.tgz -C /usr/local/bin
+sudo tar xvzf $DOWNLOADS_FOLDER/ngrok-v3-stable-linux-amd64.tgz -C /usr/local/bin
 
 ###########################
 #  instala kitty
 ###########################
 sudo apt install -y kitty
-cd ~
+cd 
 rm -rf ~/.config/kitty
 
 git clone https://github.com/dleyvacastro/dotfiles.git
@@ -34,9 +36,10 @@ rm -rf ~/dotfiles
 sudo apt install -y nodejs
 sudo pip3 install neovim
 
-cd ~/Downloads
+cd $DOWNLOADS_FOLDER
 wget https://github.com/neovim/neovim/releases/download/v0.7.0/nvim-linux64.deb
-sudo apt install -y ./nvim-linux*.deb
+sudo apt install -y $DOWNLOADS_FOLDER/nvim-linux*.deb
+rm $DOWNLOADS_FOLDER/nvim-linux*.deb
 
 echo 'alias vim="nvim"' >> ~/.zshrc
 
@@ -54,7 +57,7 @@ cd 	~/.fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/AnonymousPro.zip
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/DejaVuSansMono.zip
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/VictorMono.zip
-unzio ./DejaVu*.zip
+unzip ./DejaVu*.zip
 unzip ./AnonymousPro.zip
 unzip ./Victor*.zip
 rm ./AnonymousPro.zip
@@ -86,10 +89,14 @@ sudo apt install gh
 #  instala lsd
 ###########################
 
-cd ~/Downloads
+cd $DOWNLOADS_FOLDER
+wget https://github.com/neovim/neovim/releases/download/v0.7.0/nvim-linux64.deb
+sudo apt install -y $DOWNLOADS_FOLDER/nvim-linux*.deb
+rm $DOWNLOADS_FOLDER/nvim-linux*.deb
+
 wget https://github.com/Peltoche/lsd/releases/download/0.21.0/lsd-musl_0.21.0_amd64.deb
-sudo apt install -y ./lsd*.deb
-rm ./lsd*.deb
+sudo apt install -y $DOWNLOADS_FOLDER/lsd*.deb
+rm $DOWNLOADS_FOLDER/lsd*.deb
 cd
 
 echo 'alias ls="lsd --color=auto"' >> ~/.zshrc
@@ -98,10 +105,10 @@ echo 'alias ls="lsd --color=auto"' >> ~/.zshrc
 #  instala bat
 ###########################
 
-cd ~/Downloads
+cd $DOWNLOADS_FOLDER
 wget https://github.com/sharkdp/bat/releases/download/v0.20.0/bat-musl_0.20.0_amd64.deb
-sudo apt install -y ./bat*.deb
-rm ./bat*.deb
+sudo apt install -y $DOWNLOADS_FOLDER/bat*.deb
+rm $DOWNLOADS_FOLDER/bat*.deb
 
 echo 'alias cat="bat --color auto"' >> ~/.zshrc
 

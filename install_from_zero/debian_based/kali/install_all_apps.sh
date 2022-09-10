@@ -1,5 +1,7 @@
 #!/bin/bash
 
+DOWNLOADS_FOLDER='/home/dave/Downloads'
+
 print_downloading_message() {
   echo "#########################"  
   echo "Downloading $1 ..."
@@ -11,15 +13,14 @@ print_downloading_message() {
 ##########################
 print_downloading_message "arduino"
 
-cd ~/Downloads
+cd $DOWNLOADS_FOLDER
 wget https://downloads.arduino.cc/arduino-1.8.19-linux64.tar.xz
 
-tar -xf ./arduino*.tar.xz
-rm  ./arduino*.tar.xz
+tar -xf $DOWNLOADS_FOLDER/arduino*.tar.xz
+rm  $DOWNLOADS_FOLDER/arduino*.tar.xz
 
-cd ./arduino*
-./arduino-linux-set-up.sh
-sudo ./install.sh
+$DOWNLOADS_FOLDER/arduino-1.8.19/arduino-linux-set-up.sh
+sudo $DOWNLOADS_FOLDER/arduino-1.8.19/install.sh
 
 
 ##########################
@@ -29,26 +30,25 @@ sudo ./install.sh
 sudo apt install -y thonny
 
 
-
 ##########################
 # instala chrome 
 ##########################
 print_downloading_message "chrome"
 
-cd ~/Downloads
+cd $DOWNLOADS_FOLDER
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo apt install -y ./google-chrome*.deb
-rm ./google-chrome*.deb
+sudo apt install -y $DOWNLOADS_FOLDER/google-chrome*.deb
+rm $DOWNLOADS_FOLDER/google-chrome*.deb
 cd
 
 ##########################
 # instala vivaldi
 ##########################
 
-cd ~/Downloads
+cd $DOWNLOADS_FOLDER
 wget https://downloads.vivaldi.com/stable/vivaldi-stable_5.3.2679.68-1_amd64.deb
-sudo apt install -y ./vivaldi*.deb
-rm ./vivaldi*.deb
+sudo apt install -y $DOWNLOADS_FOLDER/vivaldi*.deb
+rm $DOWNLOADS_FOLDER/vivaldi*.deb
 cd
 
 ##########################
@@ -68,11 +68,11 @@ sudo apt install -y brave-browser
 #############################
 print_downloading_message "zoom"
 
-cd ~/Downloads
+cd $DOWNLOADS_FOLDER
 wget https://zoom.us/client/latest/zoom_amd64.deb
-sudo apt install -y ./zoom*.deb
+sudo apt install -y $DOWNLOADS_FOLDER/zoom*.deb
 
-rm ./zoom*.deb
+rm $DOWNLOADS_FOLDER/zoom*.deb
 
 
 
@@ -81,10 +81,10 @@ rm ./zoom*.deb
 ##########################
 print_downloading_message "discord"
 
-cd ~/Downloads
+cd $DOWNLOADS_FOLDER
 wget -O discord.deb https://discord.com/api/download\?platform=linux\&format=deb
-sudo apt install -y ./discord.deb
-rm ./discord.deb
+sudo apt install -y $DOWNLOADS_FOLDER/discord.deb
+rm $DOWNLOADS_FOLDER/discord.deb
 
 
 ##########################
@@ -92,11 +92,11 @@ rm ./discord.deb
 ##########################
 print_downloading_message "telegram"
 
-cd ~/Downloads
+cd $DOWNLOADS_FOLDER
 wget https://telegram.org/dl/desktop/linux
-mv linux telegram.tar.xz
-tar -xf telegram.tar.xz 
-rm telegram.tar.xz
+mv $DOWNLOADS_FOLDER/linux $DOWNLOADS_FOLDER/telegram.tar.xz
+tar -xf $DOWNLOADS_FOLDER/telegram.tar.xz 
+rm $DOWNLOADS_FOLDER/telegram.tar.xz
 
 
 
@@ -114,63 +114,69 @@ sudo apt-get update && sudo apt-get install -y spotify-client
 # instala anaconda
 #########################
 
-cd ~/Downloads
+cd $DOWNLOADS_FOLDER
+wget https://telegram.org/dl/desktop/linux
 wget https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh
-bash ./Anaconda*.sh
+bash $DOWNLOADS_FOLDER/Anaconda*.sh
 
 conda activate base
 conda install jupyter matplotlib numba scipy tensorflow 
-rm ./Anaconda*.sh
+rm $DOWNLOADS_FOLDER/Anaconda*.sh
 
 
 #############################
 # instala write 
 #############################
 
-cd ~/Downloads 
-wget http://www.styluslabs.com/download/write-tgz
-tar -xf write-tgz
-rm write-tgz
-cd Write
-./setup.sh
+#cd ~/Downloads 
+#wget http://www.styluslabs.com/download/write-tgz
+#tar -xf write-tgz
+#rm write-tgz
+#cd Write
+#./setup.sh
 
 #############################
-# instala todoist
+# instala app image launcher
 ##############################
 
-cd ~/Downloads 
+cd $DOWNLOADS_FOLDER
 
 wget https://github.com/TheAssassin/AppImageLauncher/releases/download/v2.2.0/appimagelauncher-lite-2.2.0-travis995-0f91801-x86_64.AppImage
 
-chmod 777 ./appimagelauncher*
-./appimagelauncher-lite-*.AppImage install
+chmod 777 $DOWNLOADS_FOLDER/appimagelauncher*
+$DOWNLOADS_FOLDER/appimagelauncher-lite-*.AppImage install
 
-wget https://todoist.com/linux_app/appimage
-mv appimage ./todoist
-mv ./todoist ~/Applications
+rm $DOWNLOADS_FOLDER/appimagelauncher*.AppImage
 
-rm ./appimagelauncher*.AppImage
+#############################
+# instala  todoist
+#############################
+#wget https://todoist.com/linux_app/appimage
+#mv appimage ./todoist
+#mv ./todoist ~/Applications
+
 
 
 
 #############################
-# instala todoist
+# instala Chrome
 ##############################
 
-cd ~/Downloads 
+cd $DOWNLOADS_FOLDER
+
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
-sudo apt install -y ./google-chrome-stable*.deb
-rm  ./google-chrome-stable*.deb
+sudo apt install -y $DOWNLOADS_FOLDER/google-chrome-stable*.deb
+rm  $DOWNLOADS_FOLDER/google-chrome-stable*.deb
 cd
 
 #############################
 # instala Notion 
 ##############################
 
-cd ~/Downloads 
+cd $DOWNLOADS_FOLDER
 wget https://github.com/notion-enhancer/notion-repackaged/releases/download/v2.0.18-1/Notion-2.0.18-1.AppImage
-mv Notion*.AppImage ~/Applications
+mv $DOWNLOADS_FOLDER/Notion*.AppImage ~/Applications
 cd 
 
 
@@ -178,11 +184,11 @@ cd
 # instala Obsidian -> por si acaso 
 ##############################
 
-cd ~/Downloads 
-wget https://github.com/obsidianmd/obsidian-releases/releases/download/v0.14.6/obsidian_0.14.6_amd64.deb
-sudo apt install -y ./obsidian*.deb
-rm obsidian*.deb
-cd 
+#cd ~/Downloads 
+#wget https://github.com/obsidianmd/obsidian-releases/releases/download/v0.14.6/obsidian_0.14.6_amd64.deb
+#sudo apt install -y ./obsidian*.deb
+#rm obsidian*.deb
+#cd 
 
 
 #############################
@@ -219,7 +225,7 @@ sudo apt install --install-recommends -y kicad
 # ejecuta algunas cosas al final
 #################################
 
-. ~/Downloads/Telegram/Telegram
+$DOWNLOADS_FOLDER/Telegram/Telegram
 
 
 
