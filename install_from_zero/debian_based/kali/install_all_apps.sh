@@ -167,10 +167,9 @@ rm $DOWNLOADS_FOLDER/telegram.tar.xz
 ##########################
 
 cd $DOWNLOADS_FOLDER
-wget https://github.com/mawie81/whatsdesktop/releases/download/1.8.0/whatsdesktop_1.8.0_amd64.deb
-sudo apt install -y $DOWNLOADS_FOLDER/whatsdesktop_1.8.0_amd64.deb
-rm $DOWNLOADS_FOLDER/whatsdesktop_1.8.0_amd64.deb
-cd
+wget https://zerkc.gitlab.io/whatsdesk/whatsdesk_0.3.9_amd64.deb
+sudo apt install -y $DOWNLOADS_FOLDER/whatsdesk_0.3.9_amd64.deb
+rm $DOWNLOADS_FOLDER/whatsdesk_0.3.9_amd64.deb
 
 
 
