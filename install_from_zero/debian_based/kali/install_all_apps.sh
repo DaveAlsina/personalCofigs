@@ -87,18 +87,6 @@ sudo apt install -y $DOWNLOADS_FOLDER/discord.deb
 rm $DOWNLOADS_FOLDER/discord.deb
 
 
-##########################
-# instala telegram
-##########################
-print_downloading_message "telegram"
-
-cd $DOWNLOADS_FOLDER
-wget https://telegram.org/dl/desktop/linux
-mv $DOWNLOADS_FOLDER/linux $DOWNLOADS_FOLDER/telegram.tar.xz
-tar -xf $DOWNLOADS_FOLDER/telegram.tar.xz 
-rm $DOWNLOADS_FOLDER/telegram.tar.xz
-
-
 
 ##########################
 # instala spotify
@@ -122,6 +110,13 @@ bash $DOWNLOADS_FOLDER/Anaconda*.sh
 conda activate base
 conda install jupyter matplotlib numba scipy tensorflow 
 rm $DOWNLOADS_FOLDER/Anaconda*.sh
+
+
+
+#############################
+# instala xournal
+#############################
+sudo apt install -y xournal
 
 
 #############################
@@ -155,6 +150,27 @@ rm $DOWNLOADS_FOLDER/appimagelauncher*.AppImage
 #mv appimage ./todoist
 #mv ./todoist ~/Applications
 
+
+##########################
+# instala telegram
+##########################
+print_downloading_message "telegram"
+
+cd $DOWNLOADS_FOLDER
+wget https://telegram.org/dl/desktop/linux
+mv $DOWNLOADS_FOLDER/linux $DOWNLOADS_FOLDER/telegram.tar.xz
+tar -xf $DOWNLOADS_FOLDER/telegram.tar.xz 
+rm $DOWNLOADS_FOLDER/telegram.tar.xz
+
+##########################
+# instala whatsdesktop
+##########################
+
+cd $DOWNLOADS_FOLDER
+wget https://github.com/mawie81/whatsdesktop/releases/download/1.8.0/whatsdesktop_1.8.0_amd64.deb
+sudo apt install -y $DOWNLOADS_FOLDER/whatsdesktop_1.8.0_amd64.deb
+rm $DOWNLOADS_FOLDER/whatsdesktop_1.8.0_amd64.deb
+cd
 
 
 
