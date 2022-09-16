@@ -16,8 +16,8 @@ print_downloading_message "arduino"
 cd $DOWNLOADS_FOLDER
 wget https://downloads.arduino.cc/arduino-1.8.19-linux64.tar.xz
 
-tar -xf $DOWNLOADS_FOLDER/arduino*.tar.xz
-rm  $DOWNLOADS_FOLDER/arduino*.tar.xz
+tar -xf $DOWNLOADS_FOLDER/arduino-1.8.19-linux64.tar.xz
+rm  $DOWNLOADS_FOLDER/arduino-1.8.19-linux64.tar.xz
 
 $DOWNLOADS_FOLDER/arduino-1.8.19/arduino-linux-set-up.sh
 sudo $DOWNLOADS_FOLDER/arduino-1.8.19/install.sh
