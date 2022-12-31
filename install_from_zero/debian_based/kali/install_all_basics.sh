@@ -123,8 +123,8 @@ sudo apt install -y rofi
 ###########################
 #  Instala starship
 ###########################
-curl -sS https://starship.rs/install.sh | sh
-echo 'eval "$(starship init zsh)"' >> ~/.zshrc
+#curl -sS https://starship.rs/install.sh | sh
+#echo 'eval "$(starship init zsh)"' >> ~/.zshrc
 
 
 ###########################

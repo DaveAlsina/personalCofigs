@@ -54,11 +54,13 @@ cd
 ##########################
 # instala brave
 ##########################
-print_downloading_message "brave"
+sudo apt install -y curl 
 
-sudo apt install -y apt-transport-https curl
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+
+sudo apt update -y
 
 sudo apt install -y brave-browser
 
@@ -101,37 +103,11 @@ snap install spotify
 #sudo apt-get update && sudo apt-get install -y spotify-client
 
 
-#########################
-# instala anaconda
-#########################
-
-cd $DOWNLOADS_FOLDER
-wget https://telegram.org/dl/desktop/linux
-wget https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh
-bash $DOWNLOADS_FOLDER/Anaconda*.sh
-
-conda activate base
-conda install jupyter matplotlib numba scipy tensorflow 
-rm $DOWNLOADS_FOLDER/Anaconda*.sh
-
-
-
 #############################
 # instala xournal
 #############################
 sudo apt install -y xournal
 
-
-#############################
-# instala write 
-#############################
-
-#cd ~/Downloads 
-#wget http://www.styluslabs.com/download/write-tgz
-#tar -xf write-tgz
-#rm write-tgz
-#cd Write
-#./setup.sh
 
 #############################
 # instala app image launcher
@@ -145,13 +121,6 @@ chmod 777 $DOWNLOADS_FOLDER/appimagelauncher*
 $DOWNLOADS_FOLDER/appimagelauncher-lite-*.AppImage install
 
 rm $DOWNLOADS_FOLDER/appimagelauncher*.AppImage
-
-#############################
-# instala  todoist
-#############################
-#wget https://todoist.com/linux_app/appimage
-#mv appimage ./todoist
-#mv ./todoist ~/Applications
 
 
 ##########################
@@ -218,6 +187,18 @@ sudo add-apt-repository --yes ppa:kicad/kicad-6.0-releases
 sudo apt update
 sudo apt install --install-recommends -y kicad
 
+#########################
+# instala anaconda
+#########################
+
+cd $DOWNLOADS_FOLDER
+wget https://telegram.org/dl/desktop/linux
+wget https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh
+bash $DOWNLOADS_FOLDER/Anaconda*.sh
+
+conda activate base
+conda install jupyter matplotlib numba scipy tensorflow 
+rm $DOWNLOADS_FOLDER/Anaconda*.sh
 
 
 
