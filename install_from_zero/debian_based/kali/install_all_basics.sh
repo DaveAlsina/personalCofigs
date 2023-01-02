@@ -189,7 +189,7 @@ echo 'deb [signed-by=/usr/share/keyrings/dart.gpg arch=amd64] https://storage.go
 
 sudo apt-get update
 sudo apt-get install dart
-
+sudo apt install ninja-build pkg-config libgtk-3-dev
 
 
 ###########################
