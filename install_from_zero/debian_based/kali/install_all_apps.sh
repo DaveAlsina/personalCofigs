@@ -9,6 +9,12 @@ print_downloading_message() {
 }
 
 ##########################
+# instala snap   
+##########################
+print_downloading_message "snasnap"
+sudo apt install snapd
+
+##########################
 # instala arduino  
 ##########################
 print_downloading_message "arduino"
@@ -95,12 +101,9 @@ rm $DOWNLOADS_FOLDER/discord.deb
 ##########################
 print_downloading_message  "spotify"
 
-#forgive me lord the apt keys were outdated and I wasn't able to find any solution yet
-sudo apt install snapd
-snap install spotify
-#curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add -
-#echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-#sudo apt-get update && sudo apt-get install -y spotify-client
+curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install -y spotify-client
 
 
 #############################
