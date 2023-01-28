@@ -170,6 +170,7 @@ mv $DOWNLOADS_FOLDER/Notion*.AppImage ~/Applications
 cd 
 
 
+
 #############################
 # instala Obsidian -> por si acaso 
 ##############################
@@ -189,6 +190,14 @@ cd
 sudo add-apt-repository --yes ppa:kicad/kicad-6.0-releases
 sudo apt update
 sudo apt install --install-recommends -y kicad
+
+#############################
+# instala Bottles 
+##############################
+sudo apt install -y flatpak
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak install flathub com.usebottles.bottles
+
 
 #########################
 # instala anaconda
