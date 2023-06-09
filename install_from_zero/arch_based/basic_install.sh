@@ -39,6 +39,13 @@ paru
 
 
 #-----------------------------
+# Install other service and tools manager
+#-----------------------------
+paru -S --noconfirm snapd
+sudo systemctl restart snapd.service
+
+
+#-----------------------------
 # Workflow
 #-----------------------------
 paru -S --noconfirm bat lsd rofi alacritty-git github-cli
@@ -47,8 +54,15 @@ paru -S --noconfirm bat lsd rofi alacritty-git github-cli
 #-----------------------------
 # Install some languages
 #----------------------------
-paru -S --noconfirm dart-sdk-dev go-dev 
-paru -S --noconfirm flutter
+paru -S --noconfirm go-dev 
+
+#------------------------------
+# Installing flutter and dart 
+#------------------------------
+paru -S --noconfirm ninja-git
+
+cd ~/Downloads/ && wget https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.10.4-stable.tar.xz
+cd ~ && mkdir development && cd development && tar xf ~/Downloads/flutter_linux_3.10.4-stable.tar.xz
 
 
 
@@ -67,7 +81,7 @@ paru -S --noconfirm  brave-bin vivaldi
 #-----------------------------
 # Music 
 #-----------------------------
-paru -S --noconfirm  spotify
+snap install spotify
 
 
 #-----------------------------
@@ -82,4 +96,8 @@ paru
 echo "Running $SCRIPT_DIR/add_aliases.sh to add custom aliases..."
 source $SCRIPT_DIR/add_aliases.sh
 
+#-----------------------------
+# Sets flutter up
+#-----------------------------
+flutter precache 
 

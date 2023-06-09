@@ -10,3 +10,5 @@ alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'
 
+export PATH="$HOME/development/flutter/bin:$PATH"
+
