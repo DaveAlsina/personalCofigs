@@ -1,0 +1,12 @@
+#!/bin/bash
+
+alias ls='lsd'
+alias cat='bat'
+alias vim='nvim'
+alias sdn='shutdown now'
+alias grep='grep --color=auto'
+
+alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+

@@ -1,5 +1,13 @@
 #!/bin/bash
 
+SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
+echo ;
+
+#-----------------------------
+# add custom terminal aliases
+#-----------------------------
+cat ../../$SCRIPT_DIR/alias/aliases >> ~/.zshrc 
+
 #-----------------------------
 # Change the swappiness value
 #-----------------------------
@@ -67,5 +75,11 @@ paru -S --noconfirm  spotify
 #-----------------------------
 paru
 
+
+#-----------------------------
+# Adds aliases
+#-----------------------------
+echo "Running $SCRIPT_DIR/add_aliases.sh to add custom aliases..."
+source $SCRIPT_DIR/add_aliases.sh
 
 
