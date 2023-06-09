@@ -59,6 +59,7 @@ paru -S --noconfirm go-dev
 #------------------------------
 # Installing flutter and dart 
 #------------------------------
+paru -S --noconfirm ninja
 paru -S --noconfirm ninja-git
 
 cd ~/Downloads/ && wget https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.10.4-stable.tar.xz
