@@ -1,6 +1,18 @@
 #!/bin/bash
 
 #-----------------------------
+# Change the swappiness value
+#-----------------------------
+sudo sysctl vm.swappiness=10
+
+
+#-----------------------------
+# Install neovim and text editors
+#-----------------------------
+sudo pacman -S --noconfirm neovim tmux
+
+
+#-----------------------------
 # Install paru
 #-----------------------------
 
@@ -17,23 +29,18 @@ popd
 #-----------------------------
 paru 
 
-#-----------------------------
-# Install neovim and text editors
-#-----------------------------
-paru -s --noconfirm neovim tmux alacritty-git
-#sudo pacman -S nushell starship
-
 
 #-----------------------------
 # Workflow
 #-----------------------------
-paru -S --noconfirm bat lsd rofi
+paru -S --noconfirm bat lsd rofi alacritty-git github-cli
 
 
 #-----------------------------
 # Install some languages
 #----------------------------
-#paru -S --noconfirm rustup
+paru -S --noconfirm dart-sdk-dev go-dev 
+paru -S --noconfirm flutter
 
 
 

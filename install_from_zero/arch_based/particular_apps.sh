@@ -2,14 +2,14 @@
 
 
 #-----------------------------
-# Kicad 
+# Kicad y thonny
 #-----------------------------
-paru -S --noconfirm  kicad
+paru -S --noconfirm  kicad thonny
 
 
 
 #-----------------------------
-# Thonny 
+# Android Studio 
 #-----------------------------
-paru -S --noconfirm  thonny
+paru -S --noconfirm android-studio
 
