@@ -1,6 +1,7 @@
 #!/bin/bash
 
 alias ls='lsd'
+alias catt='/bin/cat'
 alias cat='bat'
 alias vim='nvim'
 alias sdn='shutdown now'
