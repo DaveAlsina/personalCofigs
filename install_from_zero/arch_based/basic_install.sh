@@ -19,6 +19,13 @@ sudo sysctl vm.swappiness=10
 #-----------------------------
 sudo pacman -S --noconfirm neovim tmux
 
+#-----------------------------
+# Add chinese language support 
+#-----------------------------
+#https://youtu.be/8XDmLr6wb4M
+sudo pacman -S --noconfirm noto-fonts-cjk adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts
+sudo pacman -S --noconfirm fcitx5 fcitx5-gtk fcitx5-qt fcitx5-chinese-addons fcitx5-configtool
+
 
 #-----------------------------
 # Install paru
