@@ -55,13 +55,13 @@ sudo systemctl restart snapd.service
 #-----------------------------
 # Workflow
 #-----------------------------
-paru -S --noconfirm bat lsd rofi alacritty-git github-cli
+paru -S --noconfirm bat lsd rofi alacritty-git github-cli github-desktop-bin
 
 
 #-----------------------------
 # Install some languages
 #----------------------------
-paru -S --noconfirm go-dev 
+paru -S --noconfirm julia-bin go-dev 
 
 #------------------------------
 # Installing flutter and dart 
