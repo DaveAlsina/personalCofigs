@@ -12,7 +12,6 @@ paru -S --noconfirm appimagelauncher
 #-----------------------------
 paru -S --noconfirm notion-app
 
-
 #-----------------------------
 # Xournal
 #-----------------------------
@@ -28,6 +27,10 @@ paru -S --noconfirm zoom
 #-----------------------------
 paru -S --noconfirm  kicad thonny
 
+#-----------------------------
+# vscode
+#-----------------------------
+paru -S --noconfirm visual-studio-code-bin
 
 # Importing libraries and setting things up 
 sudo mkdir -p /usr/share/kicad/footprints/ && cd /usr/share/kicad/footprints/ && sudo wget https://gitlab.com/kicad/libraries/kicad-footprints/-/archive/master/kicad-footprints-master.zip && sudo unzip kicad-footprints-master.zip
